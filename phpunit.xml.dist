@@ -22,7 +22,7 @@
          verbose="true">
 
     <testsuites>
-        <testsuite name="Spinen SolarWindsMSP Client">
+        <testsuite name="SPINEN's PHP Client for N-able's N-Central">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
@@ -39,7 +39,7 @@
                 <directory suffix=".php">src/Exceptions</directory>
                 <!--Since the Models are generated, there is no reason to test them-->
                 <directory suffix=".php">src/Models</directory>
-                <file>src/Laravel/Facades/SolarWindsMsp.php</file>
+                <file>src/Laravel/Facades/Ncentral.php</file>
                 <file>src/Laravel/ServiceProvider.php</file>
             </exclude>
         </whitelist>
@@ -52,7 +52,7 @@
     <logging>
         <log type="coverage-html"
              target="./build/coverage"
-             title="SolarWindsMSP API PHP Client"
+             title="SPINEN's PHP Client for N-able's N-Central"
              charset="UTF-8"
              yui="true"
              highlight="true"
