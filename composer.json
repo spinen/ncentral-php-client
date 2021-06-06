@@ -1,9 +1,9 @@
 {
-    "name": "spinen/solarwindsmsp-php-client",
-    "description": "SPINEN's PHP Client for SolarWindsMSP.",
+    "name": "spinen/ncentral-php-client",
+    "description": "SPINEN's PHP Client for N-able's N-Central.",
     "keywords": [
-        "SolarWinds",
-        "SolarWinds MSP",
+        "N-able",
+        "N-Central",
         "client",
         "spinen"
     ],
@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spinen\\SolarWindsMsp\\": "src/"
+            "Spinen\\Nable\\Ncentral\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spinen\\SolarWindsMsp\\": "tests/"
+            "Spinen\\Nable\\Ncentral\\": "tests/"
         }
     },
     "config": {
