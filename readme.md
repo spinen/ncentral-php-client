@@ -1,4 +1,4 @@
-# SPINEN's SolarWindsMSP PHP Client
+# SPINEN's PHP Client for N-able's N-Central
 
 [![Latest Stable Version](https://poser.pugx.org/spinen/solarwindsmsp-php-client/v/stable)](https://packagist.org/packages/spinen/solarwindsmsp-php-client)
 [![Total Downloads](https://poser.pugx.org/spinen/solarwindsmsp-php-client/downloads)](https://packagist.org/packages/spinen/solarwindsmsp-php-client)
@@ -6,7 +6,7 @@
 [![Dependency Status](https://www.versioneye.com/php/spinen:solarwindsmsp-php-client/badge.svg)](https://www.versioneye.com/php/spinen:solarwindsmsp-php-client)
 [![License](https://poser.pugx.org/spinen/solarwindsmsp-php-client/license)](https://packagist.org/packages/spinen/solarwindsmsp-php-client)
 
-PHP client for the SolarWindsMSP APIs.
+PHP Client for N-able's N-Central.
 
 We solely use [Laravel](http://www.laravel.com) for our applications, so there is some Laravel specific files that you can use if you are using this client in a Laravel application. We have tried to make sure that you can use the client outside of Laravel, and have some documentation about it below.
 
@@ -24,7 +24,7 @@ We solely use [Laravel](http://www.laravel.com) for our applications, so there i
 
 ## Install
 
-Install SolarWindsMSP Client:
+Install Ncentral Client:
 
 ```bash
     $ composer require spinen/solarwindsmsp-php-client
@@ -41,7 +41,7 @@ Add the provider to ```config/app.php```
 ```php
 'providers' => [
     # other providers omitted
-    Spinen\SolarWindsMsp\Laravel\ServiceProvider::class,
+    Spinen\Nable\Ncentral\Laravel\ServiceProvider::class,
 ],
 ```
 
@@ -50,7 +50,7 @@ Add the provider to ```config/app.php```
 ```php
 'aliases' => [
     # other aliases omitted
-    'SolarWindsMSP' => Spinen\SolarWindsMsp\Laravel\Facades\SolarWindsMsp::class,
+    'Ncentral' => Spinen\Nable\Ncentral\Laravel\Facades\Ncentral::class,
 ],
 ```
 
@@ -87,7 +87,7 @@ Same call using the facade...
 ## Non-Laravel Usage
 
 To use the client outside of Laravel, you just need to new-up the objects...
- 
+
 ```
 // TODO: Document usages here
 ```

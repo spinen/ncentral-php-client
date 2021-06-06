@@ -4,12 +4,12 @@ namespace Spinen\Nable\Ncentral\Laravel;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
-use Spinen\SolarWindsMsp\Api\Client;
+use Spinen\Nable\Ncentral\Api\Client;
 
 /**
- * Class SolarWindsMspProvider
+ * Class NcentralProvider
  *
- * @package Spinen\SolarWindsMsp\Laravel
+ * @package Spinen\Nable\Ncentral\Laravel
  */
 class ServiceProvider extends LaravelServiceProvider
 {
@@ -39,7 +39,7 @@ class ServiceProvider extends LaravelServiceProvider
     {
         $this->registerClient();
 
-        $this->app->alias(Client::class, 'solarwindsmsp');
+        $this->app->alias(Client::class, 'ncentral');
     }
 
     /**

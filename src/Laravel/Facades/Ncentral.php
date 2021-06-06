@@ -5,11 +5,11 @@ namespace Spinen\Nable\Ncentral\Laravel\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class SolarWindsMspFacade
+ * Class Ncentral
  *
- * @package Spinen\SolarWindsMsp\Laravel\Facades
+ * @package Spinen\Nable\Ncentral\Laravel\Facades
  */
-class SolarWindsMsp extends Facade
+class Ncentral extends Facade
 {
     /**
      * Get the registered name of the component.
