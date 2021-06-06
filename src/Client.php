@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\SolarWindsMsp;
+namespace Spinen\Nable\Ncentral;
 
 /**
  * Class Client

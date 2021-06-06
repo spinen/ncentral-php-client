@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\SolarWindsMsp\Laravel\Facades;
+namespace Spinen\Nable\Ncentral\Laravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

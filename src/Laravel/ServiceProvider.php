@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\SolarWindsMsp\Laravel;
+namespace Spinen\Nable\Ncentral\Laravel;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
