@@ -18,6 +18,6 @@ class SolarWindsMsp extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'solarwindsmsp';
+        return 'ncentral';
     }
 }
