@@ -4,7 +4,7 @@ namespace Spinen\Nable\Ncentral\Laravel;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
-use Spinen\Nable\Ncentral\Api\Client;
+use Spinen\Nable\Ncentral\Client;
 
 /**
  * Class NcentralProvider
