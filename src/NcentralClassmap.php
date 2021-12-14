@@ -1,0 +1,107 @@
+<?php
+
+namespace Spinen\Nable\Ncentral;
+
+use Spinen\Nable\Ncentral\Type;
+use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
+use Phpro\SoapClient\Soap\ClassMap\ClassMap;
+
+class NcentralClassmap
+{
+
+    public static function getCollection() : \Phpro\SoapClient\Soap\ClassMap\ClassMapCollection
+    {
+        return new ClassMapCollection([
+            new ClassMap('stringArray', Type\StringArray::class),
+            new ClassMap('activeIssuesList', Type\ActiveIssuesList::class),
+            new ClassMap('eiKeyValue', Type\EiKeyValue::class),
+            new ClassMap('eiTuple', Type\EiTuple::class),
+            new ClassMap('activeIssuesListResponse', Type\ActiveIssuesListResponse::class),
+            new ClassMap('eiKeyValueList', Type\EiKeyValueList::class),
+            new ClassMap('customerAdd', Type\CustomerAdd::class),
+            new ClassMap('customerAddResponse', Type\CustomerAddResponse::class),
+            new ClassMap('organizationPropertyList', Type\OrganizationPropertyList::class),
+            new ClassMap('organizationPropertyListResponse', Type\OrganizationPropertyListResponse::class),
+            new ClassMap('organizationProperties', Type\OrganizationProperties::class),
+            new ClassMap('organizationProperty', Type\OrganizationProperty::class),
+            new ClassMap('accessGroupAdd', Type\AccessGroupAdd::class),
+            new ClassMap('accessGroupAddResponse', Type\AccessGroupAddResponse::class),
+            new ClassMap('lastExportReset', Type\LastExportReset::class),
+            new ClassMap('lastExportResetResponse', Type\LastExportResetResponse::class),
+            new ClassMap('userRoleList', Type\UserRoleList::class),
+            new ClassMap('userRoleListResponse', Type\UserRoleListResponse::class),
+            new ClassMap('eiKeyValuesList', Type\EiKeyValuesList::class),
+            new ClassMap('eiKeyValues', Type\EiKeyValues::class),
+            new ClassMap('arrayList', Type\ArrayList::class),
+            new ClassMap('abstractList', Type\AbstractList::class),
+            new ClassMap('abstractCollection', Type\AbstractCollection::class),
+            new ClassMap('deviceGetStatus', Type\DeviceGetStatus::class),
+            new ClassMap('deviceGetStatusResponse', Type\DeviceGetStatusResponse::class),
+            new ClassMap('psaCreateCustomTicket', Type\PsaCreateCustomTicket::class),
+            new ClassMap('psaCreateCustomTicketResponse', Type\PsaCreateCustomTicketResponse::class),
+            new ClassMap('eiCustomPsaTicketResponse', Type\EiCustomPsaTicketResponse::class),
+            new ClassMap('accessGroupList', Type\AccessGroupList::class),
+            new ClassMap('accessGroupListResponse', Type\AccessGroupListResponse::class),
+            new ClassMap('SOAdd', Type\SOAdd::class),
+            new ClassMap('SOAddResponse', Type\SOAddResponse::class),
+            new ClassMap('userRoleAdd', Type\UserRoleAdd::class),
+            new ClassMap('userRoleAddResponse', Type\UserRoleAddResponse::class),
+            new ClassMap('customerDelete', Type\CustomerDelete::class),
+            new ClassMap('customerDeleteResponse', Type\CustomerDeleteResponse::class),
+            new ClassMap('organizationPropertyModify', Type\OrganizationPropertyModify::class),
+            new ClassMap('organizationPropertyModifyResponse', Type\OrganizationPropertyModifyResponse::class),
+            new ClassMap('deviceList', Type\DeviceList::class),
+            new ClassMap('deviceListResponse', Type\DeviceListResponse::class),
+            new ClassMap('jobStatusList', Type\JobStatusList::class),
+            new ClassMap('jobStatusListResponse', Type\JobStatusListResponse::class),
+            new ClassMap('customerModify', Type\CustomerModify::class),
+            new ClassMap('customerModifyResponse', Type\CustomerModifyResponse::class),
+            new ClassMap('deviceAssetInfoExportDevice', Type\DeviceAssetInfoExportDevice::class),
+            new ClassMap('deviceAssetInfoExportDeviceResponse', Type\DeviceAssetInfoExportDeviceResponse::class),
+            new ClassMap('userRoleGet', Type\UserRoleGet::class),
+            new ClassMap('userRoleGetResponse', Type\UserRoleGetResponse::class),
+            new ClassMap('taskPauseMonitoring', Type\TaskPauseMonitoring::class),
+            new ClassMap('taskPauseMonitoringResponse', Type\TaskPauseMonitoringResponse::class),
+            new ClassMap('wrapperTaskMonitoring', Type\WrapperTaskMonitoring::class),
+            new ClassMap('tEITaskFailed', Type\TEITaskFailed::class),
+            new ClassMap('psaCredentialsValidate', Type\PsaCredentialsValidate::class),
+            new ClassMap('psaCredentialsValidateResponse', Type\PsaCredentialsValidateResponse::class),
+            new ClassMap('deviceGet', Type\DeviceGet::class),
+            new ClassMap('deviceGetResponse', Type\DeviceGetResponse::class),
+            new ClassMap('psaGetCustomTicket', Type\PsaGetCustomTicket::class),
+            new ClassMap('psaGetCustomTicketResponse', Type\PsaGetCustomTicketResponse::class),
+            new ClassMap('eiCustomPsaTicketDetails', Type\EiCustomPsaTicketDetails::class),
+            new ClassMap('versionInfoGet', Type\VersionInfoGet::class),
+            new ClassMap('eiCredentials', Type\EiCredentials::class),
+            new ClassMap('versionInfoGetResponse', Type\VersionInfoGetResponse::class),
+            new ClassMap('configValue', Type\ConfigValue::class),
+            new ClassMap('acknowledgeNotification', Type\AcknowledgeNotification::class),
+            new ClassMap('acknowledgeNotificationResponse', Type\AcknowledgeNotificationResponse::class),
+            new ClassMap('userAdd', Type\UserAdd::class),
+            new ClassMap('userAddResponse', Type\UserAddResponse::class),
+            new ClassMap('devicePropertyModify', Type\DevicePropertyModify::class),
+            new ClassMap('deviceProperties', Type\DeviceProperties::class),
+            new ClassMap('deviceProperty', Type\DeviceProperty::class),
+            new ClassMap('devicePropertyModifyResponse', Type\DevicePropertyModifyResponse::class),
+            new ClassMap('psaReopenCustomTicket', Type\PsaReopenCustomTicket::class),
+            new ClassMap('psaReopenCustomTicketResponse', Type\PsaReopenCustomTicketResponse::class),
+            new ClassMap('taskResumeMonitoring', Type\TaskResumeMonitoring::class),
+            new ClassMap('taskResumeMonitoringResponse', Type\TaskResumeMonitoringResponse::class),
+            new ClassMap('customerListChildren', Type\CustomerListChildren::class),
+            new ClassMap('customerListChildrenResponse', Type\CustomerListChildrenResponse::class),
+            new ClassMap('accessGroupGet', Type\AccessGroupGet::class),
+            new ClassMap('accessGroupGetResponse', Type\AccessGroupGetResponse::class),
+            new ClassMap('deviceAssetInfoExportDeviceWithSettings', Type\DeviceAssetInfoExportDeviceWithSettings::class),
+            new ClassMap('deviceAssetInfoExportDeviceWithSettingsResponse', Type\DeviceAssetInfoExportDeviceWithSettingsResponse::class),
+            new ClassMap('devicePropertyList', Type\DevicePropertyList::class),
+            new ClassMap('devicePropertyListResponse', Type\DevicePropertyListResponse::class),
+            new ClassMap('customerList', Type\CustomerList::class),
+            new ClassMap('customerListResponse', Type\CustomerListResponse::class),
+            new ClassMap('psaResolveCustomTicket', Type\PsaResolveCustomTicket::class),
+            new ClassMap('psaResolveCustomTicketResponse', Type\PsaResolveCustomTicketResponse::class),
+        ]);
+    }
+
+
+}
+
