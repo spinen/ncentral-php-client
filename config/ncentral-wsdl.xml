@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://server.nable.com/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://ei2.nobj.nable.com/" name="ServerEI2SoapBindingImplService" targetNamespace="http://server.nable.com/">
+  <wsdl:import location="https://remote.spinen.net/dms2/services2/ServerEI2?wsdl=ServerEI2.wsdl" namespace="http://ei2.nobj.nable.com/">
+    </wsdl:import>
+  <wsdl:binding name="ServerEI2SoapBindingImplServiceSoapBinding" type="ns1:ServerEI2">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="activeIssuesList">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="activeIssuesList">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activeIssuesListResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="customerAdd">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="customerAdd">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="customerAddResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="organizationPropertyList">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="organizationPropertyList">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="organizationPropertyListResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accessGroupAdd">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="accessGroupAdd">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="accessGroupAddResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lastExportReset">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="lastExportReset">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="lastExportResetResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userRoleList">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="userRoleList">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="userRoleListResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deviceGetStatus">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="deviceGetStatus">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deviceGetStatusResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="psaCreateCustomTicket">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="psaCreateCustomTicket">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="psaCreateCustomTicketResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accessGroupList">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="accessGroupList">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="accessGroupListResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SOAdd">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="SOAdd">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SOAddResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userRoleAdd">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="userRoleAdd">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="userRoleAddResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="customerDelete">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="customerDelete">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="customerDeleteResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="organizationPropertyModify">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="organizationPropertyModify">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="organizationPropertyModifyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deviceList">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="deviceList">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deviceListResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="jobStatusList">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="jobStatusList">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="jobStatusListResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="customerModify">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="customerModify">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="customerModifyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deviceAssetInfoExportDevice">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="deviceAssetInfoExportDevice">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deviceAssetInfoExportDeviceResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userRoleGet">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="userRoleGet">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="userRoleGetResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="taskPauseMonitoring">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="taskPauseMonitoring">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="taskPauseMonitoringResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="psaCredentialsValidate">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="psaCredentialsValidate">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="psaCredentialsValidateResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deviceGet">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="deviceGet">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deviceGetResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="psaGetCustomTicket">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="psaGetCustomTicket">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="psaGetCustomTicketResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="versionInfoGet">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="versionInfoGet">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="versionInfoGetResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acknowledgeNotification">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="acknowledgeNotification">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="acknowledgeNotificationResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userAdd">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="userAdd">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="userAddResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devicePropertyModify">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="devicePropertyModify">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="devicePropertyModifyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="psaReopenCustomTicket">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="psaReopenCustomTicket">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="psaReopenCustomTicketResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="taskResumeMonitoring">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="taskResumeMonitoring">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="taskResumeMonitoringResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="customerListChildren">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="customerListChildren">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="customerListChildrenResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accessGroupGet">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="accessGroupGet">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="accessGroupGetResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deviceAssetInfoExportDeviceWithSettings">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="deviceAssetInfoExportDeviceWithSettings">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deviceAssetInfoExportDeviceWithSettingsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="devicePropertyList">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="devicePropertyList">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="devicePropertyListResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="customerList">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="customerList">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="customerListResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="psaResolveCustomTicket">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="psaResolveCustomTicket">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="psaResolveCustomTicketResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServerEI2SoapBindingImplService">
+    <wsdl:port binding="tns:ServerEI2SoapBindingImplServiceSoapBinding" name="ServerEI2SoapBindingImplPort">
+      <soap12:address location="https://remote.spinen.net/dms2/services2/ServerEI2"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
