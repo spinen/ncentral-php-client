@@ -2,6 +2,7 @@
 
 namespace Spinen\Nable\Ncentral\Type;
 
+
 use Phpro\SoapClient\Type\ResultInterface;
 
 class VersionInfoGetResponse implements ResultInterface

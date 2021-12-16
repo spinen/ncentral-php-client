@@ -2,6 +2,7 @@
 
 namespace Spinen\Nable\Ncentral\Type;
 
+
 use Phpro\SoapClient\Type\RequestInterface;
 
 class PsaCreateCustomTicket implements RequestInterface

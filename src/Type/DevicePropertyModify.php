@@ -2,6 +2,7 @@
 
 namespace Spinen\Nable\Ncentral\Type;
 
+
 use Phpro\SoapClient\Type\RequestInterface;
 
 class DevicePropertyModify implements RequestInterface
