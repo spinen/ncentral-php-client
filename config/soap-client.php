@@ -39,5 +39,4 @@ return Config::create()
                 new Rules\AssembleRule(new Assembler\ResultAssembler()),
             ])
         )
-    )
-;
+    );
