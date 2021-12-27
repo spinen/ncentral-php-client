@@ -2,10 +2,15 @@
 
 namespace Spinen\Nable\Ncentral;
 
-use Spinen\Nable\Ncentral\Client;
+use GuzzleHttp\Client;
+use Phpro\SoapClient\Soap\Engine\Engine;
+use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
+use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Spinen\Nable\Ncentral\NcentralClient;
 
 /**
- * Class Test
+ * Class ClientTest
  *
  * @package Spinen\Nable\Ncentral
  */
@@ -16,9 +21,16 @@ class ClientTest extends TestCase
      */
     protected $client;
 
+    /**
+     * @var string
+     */
+    protected $wsdl_path = 'config/ncentral-wsdl.xml';
+
     protected function setUp(): void
     {
-        $this->client = new Client();
+        $engine = $this->newEngine();
+        $event_dispatcher = new EventDispatcher();
+        $this->client = new NcentralClient($engine, $event_dispatcher);
     }
 
     /**
@@ -26,6 +38,19 @@ class ClientTest extends TestCase
      */
     public function it_can_be_constructed()
     {
-        $this->assertInstanceOf(Client::class, $this->client);
+        $this->assertInstanceOf(NcentralClient::class, $this->client);
+    }
+
+    /**
+     * Create new engine based on configs and return it
+     *
+     * @return Engine
+     */
+    protected function newEngine()
+    {
+        return ExtSoapEngineFactory::fromOptions(
+            ExtSoapOptions::defaults($this->wsdl_path, [])
+                          ->disableWsdlCache()
+        );
     }
 }
