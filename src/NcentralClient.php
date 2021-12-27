@@ -2,354 +2,453 @@
 
 namespace Spinen\Nable\Ncentral;
 
-use Spinen\Nable\Ncentral\Type;
+use Phpro\SoapClient\Client;
 use Phpro\SoapClient\Type\ResultInterface;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\RequestInterface;
+use Spinen\Nable\Ncentral\Type\AccessGroupAdd;
+use Spinen\Nable\Ncentral\Type\AccessGroupAddResponse;
+use Spinen\Nable\Ncentral\Type\AccessGroupGet;
+use Spinen\Nable\Ncentral\Type\AccessGroupGetResponse;
+use Spinen\Nable\Ncentral\Type\AccessGroupList;
+use Spinen\Nable\Ncentral\Type\AccessGroupListResponse;
+use Spinen\Nable\Ncentral\Type\AcknowledgeNotification;
+use Spinen\Nable\Ncentral\Type\AcknowledgeNotificationResponse;
+use Spinen\Nable\Ncentral\Type\ActiveIssuesList;
+use Spinen\Nable\Ncentral\Type\ActiveIssuesListResponse;
+use Spinen\Nable\Ncentral\Type\CustomerAdd;
+use Spinen\Nable\Ncentral\Type\CustomerAddResponse;
+use Spinen\Nable\Ncentral\Type\CustomerDelete;
+use Spinen\Nable\Ncentral\Type\CustomerDeleteResponse;
+use Spinen\Nable\Ncentral\Type\CustomerList;
+use Spinen\Nable\Ncentral\Type\CustomerListChildren;
+use Spinen\Nable\Ncentral\Type\CustomerListChildrenResponse;
+use Spinen\Nable\Ncentral\Type\CustomerListResponse;
+use Spinen\Nable\Ncentral\Type\CustomerModify;
+use Spinen\Nable\Ncentral\Type\CustomerModifyResponse;
+use Spinen\Nable\Ncentral\Type\DeviceAssetInfoExportDevice;
+use Spinen\Nable\Ncentral\Type\DeviceAssetInfoExportDeviceResponse;
+use Spinen\Nable\Ncentral\Type\DeviceAssetInfoExportDeviceWithSettings;
+use Spinen\Nable\Ncentral\Type\DeviceAssetInfoExportDeviceWithSettingsResponse;
+use Spinen\Nable\Ncentral\Type\DeviceGet;
+use Spinen\Nable\Ncentral\Type\DeviceGetResponse;
+use Spinen\Nable\Ncentral\Type\DeviceGetStatus;
+use Spinen\Nable\Ncentral\Type\DeviceGetStatusResponse;
+use Spinen\Nable\Ncentral\Type\DeviceList;
+use Spinen\Nable\Ncentral\Type\DeviceListResponse;
+use Spinen\Nable\Ncentral\Type\DevicePropertyList;
+use Spinen\Nable\Ncentral\Type\DevicePropertyListResponse;
+use Spinen\Nable\Ncentral\Type\DevicePropertyModify;
+use Spinen\Nable\Ncentral\Type\DevicePropertyModifyResponse;
+use Spinen\Nable\Ncentral\Type\JobStatusList;
+use Spinen\Nable\Ncentral\Type\JobStatusListResponse;
+use Spinen\Nable\Ncentral\Type\LastExportReset;
+use Spinen\Nable\Ncentral\Type\LastExportResetResponse;
+use Spinen\Nable\Ncentral\Type\OrganizationPropertyList;
+use Spinen\Nable\Ncentral\Type\OrganizationPropertyListResponse;
+use Spinen\Nable\Ncentral\Type\OrganizationPropertyModify;
+use Spinen\Nable\Ncentral\Type\OrganizationPropertyModifyResponse;
+use Spinen\Nable\Ncentral\Type\PsaCreateCustomTicket;
+use Spinen\Nable\Ncentral\Type\PsaCreateCustomTicketResponse;
+use Spinen\Nable\Ncentral\Type\PsaCredentialsValidate;
+use Spinen\Nable\Ncentral\Type\PsaCredentialsValidateResponse;
+use Spinen\Nable\Ncentral\Type\PsaGetCustomTicket;
+use Spinen\Nable\Ncentral\Type\PsaGetCustomTicketResponse;
+use Spinen\Nable\Ncentral\Type\PsaReopenCustomTicket;
+use Spinen\Nable\Ncentral\Type\PsaReopenCustomTicketResponse;
+use Spinen\Nable\Ncentral\Type\PsaResolveCustomTicket;
+use Spinen\Nable\Ncentral\Type\PsaResolveCustomTicketResponse;
+use Spinen\Nable\Ncentral\Type\SOAdd;
+use Spinen\Nable\Ncentral\Type\SOAddResponse;
+use Spinen\Nable\Ncentral\Type\TaskPauseMonitoring;
+use Spinen\Nable\Ncentral\Type\TaskPauseMonitoringResponse;
+use Spinen\Nable\Ncentral\Type\TaskResumeMonitoring;
+use Spinen\Nable\Ncentral\Type\TaskResumeMonitoringResponse;
+use Spinen\Nable\Ncentral\Type\UserAdd;
+use Spinen\Nable\Ncentral\Type\UserAddResponse;
+use Spinen\Nable\Ncentral\Type\UserRoleAdd;
+use Spinen\Nable\Ncentral\Type\UserRoleAddResponse;
+use Spinen\Nable\Ncentral\Type\UserRoleGet;
+use Spinen\Nable\Ncentral\Type\UserRoleGetResponse;
+use Spinen\Nable\Ncentral\Type\UserRoleList;
+use Spinen\Nable\Ncentral\Type\UserRoleListResponse;
+use Spinen\Nable\Ncentral\Type\VersionInfoGet;
+use Spinen\Nable\Ncentral\Type\VersionInfoGetResponse;
 
-class NcentralClient extends \Phpro\SoapClient\Client
+class NcentralClient extends Client
 {
 
     /**
-     * @param RequestInterface|Type\ActiveIssuesList $parameters
-     * @return ResultInterface|Type\ActiveIssuesListResponse
+     * @param RequestInterface|ActiveIssuesList $parameters
+     *
+     * @return ResultInterface|ActiveIssuesListResponse
      * @throws SoapException
      */
-    public function activeIssuesList(\Spinen\Nable\Ncentral\Type\ActiveIssuesList $parameters) : \Spinen\Nable\Ncentral\Type\ActiveIssuesListResponse
+    public function activeIssuesList(ActiveIssuesList $parameters) : ActiveIssuesListResponse
     {
         return $this->call('activeIssuesList', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\CustomerAdd $parameters
-     * @return ResultInterface|Type\CustomerAddResponse
+     * @param RequestInterface|CustomerAdd $parameters
+     *
+     * @return ResultInterface|CustomerAddResponse
      * @throws SoapException
      */
-    public function customerAdd(\Spinen\Nable\Ncentral\Type\CustomerAdd $parameters) : \Spinen\Nable\Ncentral\Type\CustomerAddResponse
+    public function customerAdd(CustomerAdd $parameters): CustomerAddResponse
     {
         return $this->call('customerAdd', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\OrganizationPropertyList $parameters
-     * @return ResultInterface|Type\OrganizationPropertyListResponse
+     * @param RequestInterface|OrganizationPropertyList $parameters
+     *
+     * @return ResultInterface|OrganizationPropertyListResponse
      * @throws SoapException
      */
-    public function organizationPropertyList(\Spinen\Nable\Ncentral\Type\OrganizationPropertyList $parameters) : \Spinen\Nable\Ncentral\Type\OrganizationPropertyListResponse
+    public function organizationPropertyList(OrganizationPropertyList $parameters) : OrganizationPropertyListResponse
     {
         return $this->call('organizationPropertyList', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\AccessGroupAdd $parameters
-     * @return ResultInterface|Type\AccessGroupAddResponse
+     * @param RequestInterface|AccessGroupAdd $parameters
+     *
+     * @return ResultInterface|AccessGroupAddResponse
      * @throws SoapException
      */
-    public function accessGroupAdd(\Spinen\Nable\Ncentral\Type\AccessGroupAdd $parameters) : \Spinen\Nable\Ncentral\Type\AccessGroupAddResponse
+    public function accessGroupAdd(AccessGroupAdd $parameters) : AccessGroupAddResponse
     {
         return $this->call('accessGroupAdd', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\LastExportReset $parameters
-     * @return ResultInterface|Type\LastExportResetResponse
+     * @param RequestInterface|LastExportReset $parameters
+     *
+     * @return ResultInterface|LastExportResetResponse
      * @throws SoapException
      */
-    public function lastExportReset(\Spinen\Nable\Ncentral\Type\LastExportReset $parameters) : \Spinen\Nable\Ncentral\Type\LastExportResetResponse
+    public function lastExportReset(LastExportReset $parameters) : LastExportResetResponse
     {
         return $this->call('lastExportReset', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\UserRoleList $parameters
-     * @return ResultInterface|Type\UserRoleListResponse
+     * @param RequestInterface|UserRoleList $parameters
+     *
+     * @return ResultInterface|UserRoleListResponse
      * @throws SoapException
      */
-    public function userRoleList(\Spinen\Nable\Ncentral\Type\UserRoleList $parameters) : \Spinen\Nable\Ncentral\Type\UserRoleListResponse
+    public function userRoleList(UserRoleList $parameters) : UserRoleListResponse
     {
         return $this->call('userRoleList', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\DeviceGetStatus $parameters
-     * @return ResultInterface|Type\DeviceGetStatusResponse
+     * @param RequestInterface|DeviceGetStatus $parameters
+     *
+     * @return ResultInterface|DeviceGetStatusResponse
      * @throws SoapException
      */
-    public function deviceGetStatus(\Spinen\Nable\Ncentral\Type\DeviceGetStatus $parameters) : \Spinen\Nable\Ncentral\Type\DeviceGetStatusResponse
+    public function deviceGetStatus(DeviceGetStatus $parameters) : DeviceGetStatusResponse
     {
         return $this->call('deviceGetStatus', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\PsaCreateCustomTicket $parameters
-     * @return ResultInterface|Type\PsaCreateCustomTicketResponse
+     * @param RequestInterface|PsaCreateCustomTicket $parameters
+     *
+     * @return ResultInterface|PsaCreateCustomTicketResponse
      * @throws SoapException
      */
-    public function psaCreateCustomTicket(\Spinen\Nable\Ncentral\Type\PsaCreateCustomTicket $parameters) : \Spinen\Nable\Ncentral\Type\PsaCreateCustomTicketResponse
+    public function psaCreateCustomTicket(PsaCreateCustomTicket $parameters) : PsaCreateCustomTicketResponse
     {
         return $this->call('psaCreateCustomTicket', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\AccessGroupList $parameters
-     * @return ResultInterface|Type\AccessGroupListResponse
+     * @param RequestInterface|AccessGroupList $parameters
+     *
+     * @return ResultInterface|AccessGroupListResponse
      * @throws SoapException
      */
-    public function accessGroupList(\Spinen\Nable\Ncentral\Type\AccessGroupList $parameters) : \Spinen\Nable\Ncentral\Type\AccessGroupListResponse
+    public function accessGroupList(AccessGroupList $parameters) : AccessGroupListResponse
     {
         return $this->call('accessGroupList', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\SOAdd $parameters
-     * @return ResultInterface|Type\SOAddResponse
+     * @param RequestInterface|SOAdd $parameters
+     *
+     * @return ResultInterface|SOAddResponse
      * @throws SoapException
      */
-    public function sOAdd(\Spinen\Nable\Ncentral\Type\SOAdd $parameters) : \Spinen\Nable\Ncentral\Type\SOAddResponse
+    public function sOAdd(SOAdd $parameters) : SOAddResponse
     {
         return $this->call('SOAdd', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\UserRoleAdd $parameters
-     * @return ResultInterface|Type\UserRoleAddResponse
+     * @param RequestInterface|UserRoleAdd $parameters
+     *
+     * @return ResultInterface|UserRoleAddResponse
      * @throws SoapException
      */
-    public function userRoleAdd(\Spinen\Nable\Ncentral\Type\UserRoleAdd $parameters) : \Spinen\Nable\Ncentral\Type\UserRoleAddResponse
+    public function userRoleAdd(UserRoleAdd $parameters) : UserRoleAddResponse
     {
         return $this->call('userRoleAdd', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\CustomerDelete $parameters
-     * @return ResultInterface|Type\CustomerDeleteResponse
+     * @param RequestInterface|CustomerDelete $parameters
+     *
+     * @return ResultInterface|CustomerDeleteResponse
      * @throws SoapException
      */
-    public function customerDelete(\Spinen\Nable\Ncentral\Type\CustomerDelete $parameters) : \Spinen\Nable\Ncentral\Type\CustomerDeleteResponse
+    public function customerDelete(CustomerDelete $parameters) : CustomerDeleteResponse
     {
         return $this->call('customerDelete', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\OrganizationPropertyModify $parameters
-     * @return ResultInterface|Type\OrganizationPropertyModifyResponse
+     * @param RequestInterface|OrganizationPropertyModify $parameters
+     *
+     * @return ResultInterface|OrganizationPropertyModifyResponse
      * @throws SoapException
      */
-    public function organizationPropertyModify(\Spinen\Nable\Ncentral\Type\OrganizationPropertyModify $parameters) : \Spinen\Nable\Ncentral\Type\OrganizationPropertyModifyResponse
+    public function organizationPropertyModify(OrganizationPropertyModify $parameters) : OrganizationPropertyModifyResponse
     {
         return $this->call('organizationPropertyModify', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\DeviceList $parameters
-     * @return ResultInterface|Type\DeviceListResponse
+     * @param RequestInterface|DeviceList $parameters
+     *
+     * @return ResultInterface|DeviceListResponse
      * @throws SoapException
      */
-    public function deviceList(\Spinen\Nable\Ncentral\Type\DeviceList $parameters) : \Spinen\Nable\Ncentral\Type\DeviceListResponse
+    public function deviceList(DeviceList $parameters) : DeviceListResponse
     {
         return $this->call('deviceList', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\JobStatusList $parameters
-     * @return ResultInterface|Type\JobStatusListResponse
+     * @param RequestInterface|JobStatusList $parameters
+     *
+     * @return ResultInterface|JobStatusListResponse
      * @throws SoapException
      */
-    public function jobStatusList(\Spinen\Nable\Ncentral\Type\JobStatusList $parameters) : \Spinen\Nable\Ncentral\Type\JobStatusListResponse
+    public function jobStatusList(JobStatusList $parameters) : JobStatusListResponse
     {
         return $this->call('jobStatusList', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\CustomerModify $parameters
-     * @return ResultInterface|Type\CustomerModifyResponse
+     * @param RequestInterface|CustomerModify $parameters
+     *
+     * @return ResultInterface|CustomerModifyResponse
      * @throws SoapException
      */
-    public function customerModify(\Spinen\Nable\Ncentral\Type\CustomerModify $parameters) : \Spinen\Nable\Ncentral\Type\CustomerModifyResponse
+    public function customerModify(CustomerModify $parameters) : CustomerModifyResponse
     {
         return $this->call('customerModify', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\DeviceAssetInfoExportDevice $parameters
-     * @return ResultInterface|Type\DeviceAssetInfoExportDeviceResponse
+     * @param RequestInterface|DeviceAssetInfoExportDevice $parameters
+     *
+     * @return ResultInterface|DeviceAssetInfoExportDeviceResponse
      * @throws SoapException
      */
-    public function deviceAssetInfoExportDevice(\Spinen\Nable\Ncentral\Type\DeviceAssetInfoExportDevice $parameters) : \Spinen\Nable\Ncentral\Type\DeviceAssetInfoExportDeviceResponse
+    public function deviceAssetInfoExportDevice(DeviceAssetInfoExportDevice $parameters) : DeviceAssetInfoExportDeviceResponse
     {
         return $this->call('deviceAssetInfoExportDevice', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\UserRoleGet $parameters
-     * @return ResultInterface|Type\UserRoleGetResponse
+     * @param RequestInterface|UserRoleGet $parameters
+     *
+     * @return ResultInterface|UserRoleGetResponse
      * @throws SoapException
      */
-    public function userRoleGet(\Spinen\Nable\Ncentral\Type\UserRoleGet $parameters) : \Spinen\Nable\Ncentral\Type\UserRoleGetResponse
+    public function userRoleGet(UserRoleGet $parameters) : UserRoleGetResponse
     {
         return $this->call('userRoleGet', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\TaskPauseMonitoring $parameters
-     * @return ResultInterface|Type\TaskPauseMonitoringResponse
+     * @param RequestInterface|TaskPauseMonitoring $parameters
+     *
+     * @return ResultInterface|TaskPauseMonitoringResponse
      * @throws SoapException
      */
-    public function taskPauseMonitoring(\Spinen\Nable\Ncentral\Type\TaskPauseMonitoring $parameters) : \Spinen\Nable\Ncentral\Type\TaskPauseMonitoringResponse
+    public function taskPauseMonitoring(TaskPauseMonitoring $parameters) : TaskPauseMonitoringResponse
     {
         return $this->call('taskPauseMonitoring', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\PsaCredentialsValidate $parameters
-     * @return ResultInterface|Type\PsaCredentialsValidateResponse
+     * @param RequestInterface|PsaCredentialsValidate $parameters
+     *
+     * @return ResultInterface|PsaCredentialsValidateResponse
      * @throws SoapException
      */
-    public function psaCredentialsValidate(\Spinen\Nable\Ncentral\Type\PsaCredentialsValidate $parameters) : \Spinen\Nable\Ncentral\Type\PsaCredentialsValidateResponse
+    public function psaCredentialsValidate(PsaCredentialsValidate $parameters) : PsaCredentialsValidateResponse
     {
         return $this->call('psaCredentialsValidate', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\DeviceGet $parameters
-     * @return ResultInterface|Type\DeviceGetResponse
+     * @param RequestInterface|DeviceGet $parameters
+     *
+     * @return ResultInterface|DeviceGetResponse
      * @throws SoapException
      */
-    public function deviceGet(\Spinen\Nable\Ncentral\Type\DeviceGet $parameters) : \Spinen\Nable\Ncentral\Type\DeviceGetResponse
+    public function deviceGet(DeviceGet $parameters) : DeviceGetResponse
     {
         return $this->call('deviceGet', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\PsaGetCustomTicket $parameters
-     * @return ResultInterface|Type\PsaGetCustomTicketResponse
+     * @param RequestInterface|PsaGetCustomTicket $parameters
+     *
+     * @return ResultInterface|PsaGetCustomTicketResponse
      * @throws SoapException
      */
-    public function psaGetCustomTicket(\Spinen\Nable\Ncentral\Type\PsaGetCustomTicket $parameters) : \Spinen\Nable\Ncentral\Type\PsaGetCustomTicketResponse
+    public function psaGetCustomTicket(PsaGetCustomTicket $parameters) : PsaGetCustomTicketResponse
     {
         return $this->call('psaGetCustomTicket', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\VersionInfoGet $parameters
-     * @return ResultInterface|Type\VersionInfoGetResponse
+     * @param RequestInterface|VersionInfoGet $parameters
+     *
+     * @return ResultInterface|VersionInfoGetResponse
      * @throws SoapException
      */
-    public function versionInfoGet(\Spinen\Nable\Ncentral\Type\VersionInfoGet $parameters) : \Spinen\Nable\Ncentral\Type\VersionInfoGetResponse
+    public function versionInfoGet(VersionInfoGet $parameters) : VersionInfoGetResponse
     {
         return $this->call('versionInfoGet', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\AcknowledgeNotification $parameters
-     * @return ResultInterface|Type\AcknowledgeNotificationResponse
+     * @param RequestInterface|AcknowledgeNotification $parameters
+     *
+     * @return ResultInterface|AcknowledgeNotificationResponse
      * @throws SoapException
      */
-    public function acknowledgeNotification(\Spinen\Nable\Ncentral\Type\AcknowledgeNotification $parameters) : \Spinen\Nable\Ncentral\Type\AcknowledgeNotificationResponse
+    public function acknowledgeNotification(AcknowledgeNotification $parameters) : AcknowledgeNotificationResponse
     {
         return $this->call('acknowledgeNotification', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\UserAdd $parameters
-     * @return ResultInterface|Type\UserAddResponse
+     * @param RequestInterface|UserAdd $parameters
+     *
+     * @return ResultInterface|UserAddResponse
      * @throws SoapException
      */
-    public function userAdd(\Spinen\Nable\Ncentral\Type\UserAdd $parameters) : \Spinen\Nable\Ncentral\Type\UserAddResponse
+    public function userAdd(UserAdd $parameters) : UserAddResponse
     {
         return $this->call('userAdd', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\DevicePropertyModify $parameters
-     * @return ResultInterface|Type\DevicePropertyModifyResponse
+     * @param RequestInterface|DevicePropertyModify $parameters
+     *
+     * @return ResultInterface|DevicePropertyModifyResponse
      * @throws SoapException
      */
-    public function devicePropertyModify(\Spinen\Nable\Ncentral\Type\DevicePropertyModify $parameters) : \Spinen\Nable\Ncentral\Type\DevicePropertyModifyResponse
+    public function devicePropertyModify(DevicePropertyModify $parameters) : DevicePropertyModifyResponse
     {
         return $this->call('devicePropertyModify', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\PsaReopenCustomTicket $parameters
-     * @return ResultInterface|Type\PsaReopenCustomTicketResponse
+     * @param RequestInterface|PsaReopenCustomTicket $parameters
+     *
+     * @return ResultInterface|PsaReopenCustomTicketResponse
      * @throws SoapException
      */
-    public function psaReopenCustomTicket(\Spinen\Nable\Ncentral\Type\PsaReopenCustomTicket $parameters) : \Spinen\Nable\Ncentral\Type\PsaReopenCustomTicketResponse
+    public function psaReopenCustomTicket(PsaReopenCustomTicket $parameters) : PsaReopenCustomTicketResponse
     {
         return $this->call('psaReopenCustomTicket', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\TaskResumeMonitoring $parameters
-     * @return ResultInterface|Type\TaskResumeMonitoringResponse
+     * @param RequestInterface|TaskResumeMonitoring $parameters
+     *
+     * @return ResultInterface|TaskResumeMonitoringResponse
      * @throws SoapException
      */
-    public function taskResumeMonitoring(\Spinen\Nable\Ncentral\Type\TaskResumeMonitoring $parameters) : \Spinen\Nable\Ncentral\Type\TaskResumeMonitoringResponse
+    public function taskResumeMonitoring(TaskResumeMonitoring $parameters) : TaskResumeMonitoringResponse
     {
         return $this->call('taskResumeMonitoring', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\CustomerListChildren $parameters
-     * @return ResultInterface|Type\CustomerListChildrenResponse
+     * @param RequestInterface|CustomerListChildren $parameters
+     *
+     * @return ResultInterface|CustomerListChildrenResponse
      * @throws SoapException
      */
-    public function customerListChildren(\Spinen\Nable\Ncentral\Type\CustomerListChildren $parameters) : \Spinen\Nable\Ncentral\Type\CustomerListChildrenResponse
+    public function customerListChildren(CustomerListChildren $parameters) : CustomerListChildrenResponse
     {
         return $this->call('customerListChildren', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\AccessGroupGet $parameters
-     * @return ResultInterface|Type\AccessGroupGetResponse
+     * @param RequestInterface|AccessGroupGet $parameters
+     *
+     * @return ResultInterface|AccessGroupGetResponse
      * @throws SoapException
      */
-    public function accessGroupGet(\Spinen\Nable\Ncentral\Type\AccessGroupGet $parameters) : \Spinen\Nable\Ncentral\Type\AccessGroupGetResponse
+    public function accessGroupGet(AccessGroupGet $parameters) : AccessGroupGetResponse
     {
         return $this->call('accessGroupGet', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\DeviceAssetInfoExportDeviceWithSettings $parameters
-     * @return ResultInterface|Type\DeviceAssetInfoExportDeviceWithSettingsResponse
+     * @param RequestInterface|DeviceAssetInfoExportDeviceWithSettings $parameters
+     *
+     * @return ResultInterface|DeviceAssetInfoExportDeviceWithSettingsResponse
      * @throws SoapException
      */
-    public function deviceAssetInfoExportDeviceWithSettings(\Spinen\Nable\Ncentral\Type\DeviceAssetInfoExportDeviceWithSettings $parameters) : \Spinen\Nable\Ncentral\Type\DeviceAssetInfoExportDeviceWithSettingsResponse
+    public function deviceAssetInfoExportDeviceWithSettings(DeviceAssetInfoExportDeviceWithSettings $parameters) : DeviceAssetInfoExportDeviceWithSettingsResponse
     {
         return $this->call('deviceAssetInfoExportDeviceWithSettings', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\DevicePropertyList $parameters
-     * @return ResultInterface|Type\DevicePropertyListResponse
+     * @param RequestInterface|DevicePropertyList $parameters
+     *
+     * @return ResultInterface|DevicePropertyListResponse
      * @throws SoapException
      */
-    public function devicePropertyList(\Spinen\Nable\Ncentral\Type\DevicePropertyList $parameters) : \Spinen\Nable\Ncentral\Type\DevicePropertyListResponse
+    public function devicePropertyList(DevicePropertyList $parameters) : DevicePropertyListResponse
     {
         return $this->call('devicePropertyList', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\CustomerList $parameters
-     * @return ResultInterface|Type\CustomerListResponse
+     * @param RequestInterface|CustomerList $parameters
+     *
+     * @return ResultInterface|CustomerListResponse
      * @throws SoapException
      */
-    public function customerList(\Spinen\Nable\Ncentral\Type\CustomerList $parameters) : \Spinen\Nable\Ncentral\Type\CustomerListResponse
+    public function customerList(CustomerList $parameters) : CustomerListResponse
     {
         return $this->call('customerList', $parameters);
     }
 
     /**
-     * @param RequestInterface|Type\PsaResolveCustomTicket $parameters
-     * @return ResultInterface|Type\PsaResolveCustomTicketResponse
+     * @param RequestInterface|PsaResolveCustomTicket $parameters
+     *
+     * @return ResultInterface|PsaResolveCustomTicketResponse
      * @throws SoapException
      */
-    public function psaResolveCustomTicket(\Spinen\Nable\Ncentral\Type\PsaResolveCustomTicket $parameters) : \Spinen\Nable\Ncentral\Type\PsaResolveCustomTicketResponse
+    public function psaResolveCustomTicket(PsaResolveCustomTicket $parameters) : PsaResolveCustomTicketResponse
     {
         return $this->call('psaResolveCustomTicket', $parameters);
     }
-
-
 }
-
