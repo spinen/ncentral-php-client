@@ -34,8 +34,7 @@ jobs:
           coverage: pcov
 
       - name: Install dependencies
-        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-suggest && \
-             composer global require scrutinizer/ocular
+        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction && composer global require scrutinizer/ocular
 
       - name: PHP Security Checker
         uses: symfonycorp/security-checker-action@v2
