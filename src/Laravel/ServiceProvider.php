@@ -1,15 +1,16 @@
 <?php
 
-namespace Spinen\SolarWindsMsp\Laravel;
+namespace Spinen\Ncentral\Laravel;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
-use Spinen\SolarWindsMsp\Api\Client;
+use Spinen\Ncentral\NcentralClient;
+use Spinen\Ncentral\NcentralClientFactory;
 
 /**
- * Class SolarWindsMspProvider
+ * Class NcentralProvider
  *
- * @package Spinen\SolarWindsMsp\Laravel
+ * @package Spinen\Ncentral\Laravel
  */
 class ServiceProvider extends LaravelServiceProvider
 {
@@ -27,7 +28,9 @@ class ServiceProvider extends LaravelServiceProvider
      */
     public function boot()
     {
-        //
+        $this->registerNcentralClient();
+
+        $this->registerPublishes();
     }
 
     /**
@@ -37,24 +40,41 @@ class ServiceProvider extends LaravelServiceProvider
      */
     public function register()
     {
-        $this->registerClient();
+        $this->app->alias(NcentralClient::class, 'ncentral');
 
-        $this->app->alias(Client::class, 'solarwindsmsp');
+        $this->mergeConfigFrom(__DIR__ . '/../../config/clickup.php', 'clickup');
     }
 
     /**
-     * Register the client object
+     * Register the NcentralClient object
      *
-     * A Client needs to have some properties set, so in Laravel, we are going to pull them from the configs.
+     * A NcentralClient needs to have some properties set, so in Laravel, we are going to pull them from the configs.
      */
-    protected function registerClient()
+    protected function registerNcentralClient()
     {
         $this->app->singleton(
-            Client::class,
+            NcentralClient::class,
             function (Application $app) {
-                return new Client();
+                return NcentralClientFactory::factory(env('NCENTRAL_WSDL_PATH'));
             }
         );
+    }
+
+    /**
+     * There are several resources that get published
+     *
+     * Only worry about telling the application about them if running in the console.
+     */
+    protected function registerPublishes()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishes(
+                [
+                    __DIR__ . '/../../config/soap-client.php' => config_path('soap-client.php'),
+                ],
+                'soap-client'
+            );
+        }
     }
 
     /**
@@ -65,7 +85,7 @@ class ServiceProvider extends LaravelServiceProvider
     public function provides()
     {
         return [
-            Client::class,
+            NcentralClient::class,
         ];
     }
 }

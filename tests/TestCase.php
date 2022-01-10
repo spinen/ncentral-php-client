@@ -1,29 +1,22 @@
 <?php
 
-namespace Spinen\SolarWindsMsp;
+namespace Spinen\Ncentral;
 
 use ArrayAccess;
 use Countable;
 use Iterator;
-use Mockery;
+use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use Mockery\MockInterface;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
 /**
  * Class TestCase
  *
- * @package Tests\Spinen\BrowserFilter
+ * @package Spinen\Ncentral
  */
-abstract class TestCase extends PHPUnit_Framework_TestCase
+abstract class TestCase extends PHPUnitTestCase
 {
-    public function tearDown()
-    {
-        if (class_exists('Mockery')) {
-            Mockery::close();
-        }
-
-        parent::tearDown();
-    }
+    use MockeryPHPUnitIntegration;
 
     /**
      * Helper to allow mocking of iterator classes.

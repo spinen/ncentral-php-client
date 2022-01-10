@@ -1,15 +1,15 @@
 <?php
 
-namespace Spinen\SolarWindsMsp\Laravel\Facades;
+namespace Spinen\Ncentral\Laravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class SolarWindsMspFacade
+ * Class Ncentral
  *
- * @package Spinen\SolarWindsMsp\Laravel\Facades
+ * @package Spinen\Ncentral\Laravel\Facades
  */
-class SolarWindsMsp extends Facade
+class Ncentral extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -18,6 +18,6 @@ class SolarWindsMsp extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'solarwindsmsp';
+        return 'ncentral';
     }
 }
