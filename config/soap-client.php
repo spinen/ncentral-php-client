@@ -6,10 +6,12 @@ use Phpro\SoapClient\CodeGenerator\Config\Config as SoapConfig;
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
 
+$wsdl_path = env('NCENTRAL_WSDL_PATH', './ncentral-wsdl.xml');
+
 return SoapConfig::create()
     ->setEngine($engine = ExtSoapEngineFactory::fromOptions(
-        ExtSoapOptions::defaults('ncentral-wsdl.xml', [])
-            ->disableWsdlCache()
+        ExtSoapOptions::defaults($wsdl_path, [])
+                      ->disableWsdlCache()
     ))
     ->setTypeDestination('src/Type')
     ->setTypeNamespace('Spinen\Ncentral\Type')
