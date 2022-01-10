@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral;
+namespace Spinen\Ncentral;
 
 use ArrayAccess;
 use Countable;
@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 /**
  * Class TestCase
  *
- * @package Spinen\Nable\Ncentral
+ * @package Spinen\Ncentral
  */
 abstract class TestCase extends PHPUnitTestCase
 {

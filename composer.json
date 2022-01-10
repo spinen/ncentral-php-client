@@ -13,27 +13,32 @@
         {
             "name": "Jimmy Puckett",
             "email": "jimmy.puckett@spinen.com"
+        },
+        {
+            "name": "Stephen Finney",
+            "email": "stephen.finney@spinen.com"
         }
     ],
     "require": {
         "php": ">=7.3",
+        "guzzlehttp/guzzle": "~6.3|~7.4",
         "illuminate/support": "~7.0|~8.0",
-        "nesbot/carbon": "~2.13"
+        "nesbot/carbon": "~2.13",
+        "phpro/soap-client": "^1.7"
     },
     "require-dev": {
         "mockery/mockery": "~1.3.2",
         "phpunit/phpunit": "~9.0",
-        "psy/psysh": "~0.10",
-        "scrutinizer/ocular": "1.6.*"
+        "psy/psysh": "~0.10"
     },
     "autoload": {
         "psr-4": {
-            "Spinen\\Nable\\Ncentral\\": "src/"
+            "Spinen\\Ncentral\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spinen\\Nable\\Ncentral\\": "tests/"
+            "Spinen\\Ncentral\\": "tests/"
         }
     },
     "config": {

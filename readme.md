@@ -18,8 +18,9 @@ We solely use [Laravel](http://www.laravel.com) for our applications, so there i
 
 ## Prerequisite
 
-* TODO: Add others here
+* [laminas/laminas-code](https://github.com/laminas/laminas-code) - ONLY if you want/need to use the wizard from [phpro/soap-client](https://github.com/phpro/soap-client) to regenerate the Client's class files.
 * [nesbot/carbon](https://github.com/briannesbitt/Carbon)
+* TODO: Add others here
 
 ## Install
 
@@ -34,7 +35,7 @@ $ composer require spinen/ncentral-php-client
 ```php
 'aliases' => [
     # other aliases omitted
-    'Ncentral' => Spinen\Nable\Ncentral\Laravel\Facades\Ncentral::class,
+    'Ncentral' => Spinen\Ncentral\Laravel\Facades\Ncentral::class,
 ],
 ```
 
@@ -51,7 +52,7 @@ Add the following to ```config/services.php```...
 Add the appropriate values to your ```.env```...
 
 ```bash
-// TODO: Document env vars here
+'NCENTRAL_WSDL_PATH' - Path to the Ncentral WSDL file or URL
 ```
 
 ## Usage

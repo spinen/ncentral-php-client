@@ -1,13 +1,13 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Laravel\Facades;
+namespace Spinen\Ncentral\Laravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Ncentral
  *
- * @package Spinen\Nable\Ncentral\Laravel\Facades
+ * @package Spinen\Ncentral\Laravel\Facades
  */
 class Ncentral extends Facade
 {
