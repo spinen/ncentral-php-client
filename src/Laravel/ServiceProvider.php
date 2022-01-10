@@ -5,6 +5,7 @@ namespace Spinen\Ncentral\Laravel;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Spinen\Ncentral\NcentralClient;
+use Spinen\Ncentral\NcentralClientFactory;
 
 /**
  * Class NcentralProvider
@@ -27,7 +28,9 @@ class ServiceProvider extends LaravelServiceProvider
      */
     public function boot()
     {
-        //
+        $this->registerNcentralClient();
+
+        $this->registerPublishes();
     }
 
     /**
@@ -37,9 +40,9 @@ class ServiceProvider extends LaravelServiceProvider
      */
     public function register()
     {
-        $this->registerNcentralClient();
-
         $this->app->alias(NcentralClient::class, 'ncentral');
+
+        $this->mergeConfigFrom(__DIR__ . '/../../config/clickup.php', 'clickup');
     }
 
     /**
@@ -52,9 +55,26 @@ class ServiceProvider extends LaravelServiceProvider
         $this->app->singleton(
             NcentralClient::class,
             function (Application $app) {
-                return new NcentralClient();
+                return NcentralClientFactory::factory(env('NCENTRAL_WSDL_PATH'));
             }
         );
+    }
+
+    /**
+     * There are several resources that get published
+     *
+     * Only worry about telling the application about them if running in the console.
+     */
+    protected function registerPublishes()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishes(
+                [
+                    __DIR__ . '/../../config/soap-client.php' => config_path('soap-client.php'),
+                ],
+                'soap-client'
+            );
+        }
     }
 
     /**
