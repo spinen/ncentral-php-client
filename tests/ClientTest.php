@@ -24,7 +24,7 @@ class ClientTest extends TestCase
     /**
      * @var string
      */
-    protected $wsdl_path = 'config/ncentral-wsdl.xml';
+    protected $wsdl_path = 'tests/ncentral-wsdl.xml';
 
     protected function setUp(): void
     {
