@@ -1,8 +1,8 @@
 <?php
 
-namespace Spinen\Nable\Ncentral;
+namespace Spinen\Ncentral;
 
-use Spinen\Nable\Ncentral\Type;
+use Spinen\Ncentral\Type;
 use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
 use Phpro\SoapClient\Soap\ClassMap\ClassMap;
 

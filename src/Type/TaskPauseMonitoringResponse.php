@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class TaskPauseMonitoringResponse implements ResultInterface
 {
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\WrapperTaskMonitoring
+     * @var \Spinen\Ncentral\Type\WrapperTaskMonitoring
      */
     private $return;
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\WrapperTaskMonitoring
+     * @return \Spinen\Ncentral\Type\WrapperTaskMonitoring
      */
     public function getReturn()
     {
@@ -22,7 +22,7 @@ class TaskPauseMonitoringResponse implements ResultInterface
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\WrapperTaskMonitoring $return
+     * @param \Spinen\Ncentral\Type\WrapperTaskMonitoring $return
      * @return TaskPauseMonitoringResponse
      */
     public function withReturn($return)

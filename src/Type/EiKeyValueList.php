@@ -1,17 +1,17 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 class EiKeyValueList
 {
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\EiKeyValue
+     * @var \Spinen\Ncentral\Type\EiKeyValue
      */
     private $items;
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\EiKeyValue
+     * @return \Spinen\Ncentral\Type\EiKeyValue
      */
     public function getItems()
     {
@@ -19,7 +19,7 @@ class EiKeyValueList
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\EiKeyValue $items
+     * @param \Spinen\Ncentral\Type\EiKeyValue $items
      * @return EiKeyValueList
      */
     public function withItems($items)

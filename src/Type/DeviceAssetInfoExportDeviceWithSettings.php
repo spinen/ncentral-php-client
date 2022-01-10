@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 
 use Phpro\SoapClient\Type\RequestInterface;
@@ -24,7 +24,7 @@ class DeviceAssetInfoExportDeviceWithSettings implements RequestInterface
     private $password;
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\EiKeyValues
+     * @var \Spinen\Ncentral\Type\EiKeyValues
      */
     private $settings;
 
@@ -34,7 +34,7 @@ class DeviceAssetInfoExportDeviceWithSettings implements RequestInterface
      * @var string $version
      * @var string $username
      * @var string $password
-     * @var \Spinen\Nable\Ncentral\Type\EiKeyValues $settings
+     * @var \Spinen\Ncentral\Type\EiKeyValues $settings
      */
     public function __construct($version, $username, $password, $settings)
     {
@@ -105,7 +105,7 @@ class DeviceAssetInfoExportDeviceWithSettings implements RequestInterface
     }
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\EiKeyValues
+     * @return \Spinen\Ncentral\Type\EiKeyValues
      */
     public function getSettings()
     {
@@ -113,7 +113,7 @@ class DeviceAssetInfoExportDeviceWithSettings implements RequestInterface
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\EiKeyValues $settings
+     * @param \Spinen\Ncentral\Type\EiKeyValues $settings
      * @return DeviceAssetInfoExportDeviceWithSettings
      */
     public function withSettings($settings)

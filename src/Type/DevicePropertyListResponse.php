@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class DevicePropertyListResponse implements ResultInterface
 {
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\DeviceProperties
+     * @var \Spinen\Ncentral\Type\DeviceProperties
      */
     private $return;
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\DeviceProperties
+     * @return \Spinen\Ncentral\Type\DeviceProperties
      */
     public function getReturn()
     {
@@ -22,7 +22,7 @@ class DevicePropertyListResponse implements ResultInterface
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\DeviceProperties $return
+     * @param \Spinen\Ncentral\Type\DeviceProperties $return
      * @return DevicePropertyListResponse
      */
     public function withReturn($return)

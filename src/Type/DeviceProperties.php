@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 class DeviceProperties
 {
@@ -16,7 +16,7 @@ class DeviceProperties
     private $deviceName;
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\DeviceProperty
+     * @var \Spinen\Ncentral\Type\DeviceProperty
      */
     private $properties;
 
@@ -66,7 +66,7 @@ class DeviceProperties
     }
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\DeviceProperty
+     * @return \Spinen\Ncentral\Type\DeviceProperty
      */
     public function getProperties()
     {
@@ -74,7 +74,7 @@ class DeviceProperties
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\DeviceProperty $properties
+     * @param \Spinen\Ncentral\Type\DeviceProperty $properties
      * @return DeviceProperties
      */
     public function withProperties($properties)

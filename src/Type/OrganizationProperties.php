@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 class OrganizationProperties
 {
@@ -11,7 +11,7 @@ class OrganizationProperties
     private $customerId;
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\OrganizationProperty
+     * @var \Spinen\Ncentral\Type\OrganizationProperty
      */
     private $properties;
 
@@ -36,7 +36,7 @@ class OrganizationProperties
     }
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\OrganizationProperty
+     * @return \Spinen\Ncentral\Type\OrganizationProperty
      */
     public function getProperties()
     {
@@ -44,7 +44,7 @@ class OrganizationProperties
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\OrganizationProperty $properties
+     * @param \Spinen\Ncentral\Type\OrganizationProperty $properties
      * @return OrganizationProperties
      */
     public function withProperties($properties)

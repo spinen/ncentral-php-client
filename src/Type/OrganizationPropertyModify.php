@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 
 use Phpro\SoapClient\Type\RequestInterface;
@@ -19,7 +19,7 @@ class OrganizationPropertyModify implements RequestInterface
     private $password;
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\OrganizationProperties
+     * @var \Spinen\Ncentral\Type\OrganizationProperties
      */
     private $organizationProperties;
 
@@ -28,7 +28,7 @@ class OrganizationPropertyModify implements RequestInterface
      *
      * @var string $username
      * @var string $password
-     * @var \Spinen\Nable\Ncentral\Type\OrganizationProperties $organizationProperties
+     * @var \Spinen\Ncentral\Type\OrganizationProperties $organizationProperties
      */
     public function __construct($username, $password, $organizationProperties)
     {
@@ -78,7 +78,7 @@ class OrganizationPropertyModify implements RequestInterface
     }
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\OrganizationProperties
+     * @return \Spinen\Ncentral\Type\OrganizationProperties
      */
     public function getOrganizationProperties()
     {
@@ -86,7 +86,7 @@ class OrganizationPropertyModify implements RequestInterface
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\OrganizationProperties $organizationProperties
+     * @param \Spinen\Ncentral\Type\OrganizationProperties $organizationProperties
      * @return OrganizationPropertyModify
      */
     public function withOrganizationProperties($organizationProperties)

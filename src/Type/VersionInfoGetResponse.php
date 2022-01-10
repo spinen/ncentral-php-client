@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class VersionInfoGetResponse implements ResultInterface
 {
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\ConfigValue
+     * @var \Spinen\Ncentral\Type\ConfigValue
      */
     private $return;
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\ConfigValue
+     * @return \Spinen\Ncentral\Type\ConfigValue
      */
     public function getReturn()
     {
@@ -22,7 +22,7 @@ class VersionInfoGetResponse implements ResultInterface
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\ConfigValue $return
+     * @param \Spinen\Ncentral\Type\ConfigValue $return
      * @return VersionInfoGetResponse
      */
     public function withReturn($return)

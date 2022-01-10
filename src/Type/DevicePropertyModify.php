@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 
 use Phpro\SoapClient\Type\RequestInterface;
@@ -19,7 +19,7 @@ class DevicePropertyModify implements RequestInterface
     private $password;
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\DeviceProperties
+     * @var \Spinen\Ncentral\Type\DeviceProperties
      */
     private $deviceProperties;
 
@@ -28,7 +28,7 @@ class DevicePropertyModify implements RequestInterface
      *
      * @var string $username
      * @var string $password
-     * @var \Spinen\Nable\Ncentral\Type\DeviceProperties $deviceProperties
+     * @var \Spinen\Ncentral\Type\DeviceProperties $deviceProperties
      */
     public function __construct($username, $password, $deviceProperties)
     {
@@ -78,7 +78,7 @@ class DevicePropertyModify implements RequestInterface
     }
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\DeviceProperties
+     * @return \Spinen\Ncentral\Type\DeviceProperties
      */
     public function getDeviceProperties()
     {
@@ -86,7 +86,7 @@ class DevicePropertyModify implements RequestInterface
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\DeviceProperties $deviceProperties
+     * @param \Spinen\Ncentral\Type\DeviceProperties $deviceProperties
      * @return DevicePropertyModify
      */
     public function withDeviceProperties($deviceProperties)

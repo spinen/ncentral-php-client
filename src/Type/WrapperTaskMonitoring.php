@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 class WrapperTaskMonitoring
 {
@@ -11,7 +11,7 @@ class WrapperTaskMonitoring
     private $message;
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\TEITaskFailed
+     * @var \Spinen\Ncentral\Type\TEITaskFailed
      */
     private $values;
 
@@ -36,7 +36,7 @@ class WrapperTaskMonitoring
     }
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\TEITaskFailed
+     * @return \Spinen\Ncentral\Type\TEITaskFailed
      */
     public function getValues()
     {
@@ -44,7 +44,7 @@ class WrapperTaskMonitoring
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\TEITaskFailed $values
+     * @param \Spinen\Ncentral\Type\TEITaskFailed $values
      * @return WrapperTaskMonitoring
      */
     public function withValues($values)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 
 use Phpro\SoapClient\Type\RequestInterface;
@@ -19,7 +19,7 @@ class CustomerAdd implements RequestInterface
     private $password;
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\EiKeyValue
+     * @var \Spinen\Ncentral\Type\EiKeyValue
      */
     private $settings;
 
@@ -28,7 +28,7 @@ class CustomerAdd implements RequestInterface
      *
      * @var string $username
      * @var string $password
-     * @var \Spinen\Nable\Ncentral\Type\EiKeyValue $settings
+     * @var \Spinen\Ncentral\Type\EiKeyValue $settings
      */
     public function __construct($username, $password, $settings)
     {
@@ -78,7 +78,7 @@ class CustomerAdd implements RequestInterface
     }
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\EiKeyValue
+     * @return \Spinen\Ncentral\Type\EiKeyValue
      */
     public function getSettings()
     {
@@ -86,7 +86,7 @@ class CustomerAdd implements RequestInterface
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\EiKeyValue $settings
+     * @param \Spinen\Ncentral\Type\EiKeyValue $settings
      * @return CustomerAdd
      */
     public function withSettings($settings)
