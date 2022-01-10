@@ -6,8 +6,8 @@ use GuzzleHttp\Client;
 use Phpro\SoapClient\Soap\Engine\Engine;
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
-use Symfony\Component\EventDispatcher\EventDispatcher;
 use Spinen\Ncentral\NcentralClient;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**
  * Class ClientTest
@@ -39,6 +39,15 @@ class ClientTest extends TestCase
     public function it_can_be_constructed()
     {
         $this->assertInstanceOf(NcentralClient::class, $this->client);
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_be_constructed_from_its_factory()
+    {
+        $client = NcentralClientFactory::factory($this->wsdl_path);
+        $this->assertInstanceOf(NcentralClient::class, $client);
     }
 
     /**
