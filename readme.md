@@ -57,16 +57,10 @@ Add the appropriate values to your ```.env```...
 
 ## Usage
 
-Here is an example of getting the system information...
+Set up a new `NcentralClient` using its factory...
 
 ```
-// TODO: Document usage here
-```
-
-Same call using the facade...
-
-```
-// TODO: Document usage here
+$client = Spinen\Ncentral\NcentralClientFactory::factory(env('NCENTRAL_WSDL_PATH'));
 ```
 
 ## Non-Laravel Usage
