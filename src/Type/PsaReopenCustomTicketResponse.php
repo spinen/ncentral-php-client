@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class PsaReopenCustomTicketResponse implements ResultInterface
 {
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\EiCustomPsaTicketResponse
+     * @var \Spinen\Ncentral\Type\EiCustomPsaTicketResponse
      */
     private $return;
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\EiCustomPsaTicketResponse
+     * @return \Spinen\Ncentral\Type\EiCustomPsaTicketResponse
      */
     public function getReturn()
     {
@@ -22,7 +22,7 @@ class PsaReopenCustomTicketResponse implements ResultInterface
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\EiCustomPsaTicketResponse $return
+     * @param \Spinen\Ncentral\Type\EiCustomPsaTicketResponse $return
      * @return PsaReopenCustomTicketResponse
      */
     public function withReturn($return)

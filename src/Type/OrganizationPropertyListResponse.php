@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 
 use Phpro\SoapClient\Type\ResultInterface;
@@ -9,12 +9,12 @@ class OrganizationPropertyListResponse implements ResultInterface
 {
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\OrganizationProperties
+     * @var \Spinen\Ncentral\Type\OrganizationProperties
      */
     private $return;
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\OrganizationProperties
+     * @return \Spinen\Ncentral\Type\OrganizationProperties
      */
     public function getReturn()
     {
@@ -22,7 +22,7 @@ class OrganizationPropertyListResponse implements ResultInterface
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\OrganizationProperties $return
+     * @param \Spinen\Ncentral\Type\OrganizationProperties $return
      * @return OrganizationPropertyListResponse
      */
     public function withReturn($return)

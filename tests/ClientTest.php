@@ -1,18 +1,18 @@
 <?php
 
-namespace Spinen\Nable\Ncentral;
+namespace Spinen\Ncentral;
 
 use GuzzleHttp\Client;
 use Phpro\SoapClient\Soap\Engine\Engine;
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Spinen\Nable\Ncentral\NcentralClient;
+use Spinen\Ncentral\NcentralClient;
 
 /**
  * Class ClientTest
  *
- * @package Spinen\Nable\Ncentral
+ * @package Spinen\Ncentral
  */
 class ClientTest extends TestCase
 {

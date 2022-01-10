@@ -34,7 +34,7 @@ $ composer require spinen/ncentral-php-client
 ```php
 'aliases' => [
     # other aliases omitted
-    'Ncentral' => Spinen\Nable\Ncentral\Laravel\Facades\Ncentral::class,
+    'Ncentral' => Spinen\Ncentral\Laravel\Facades\Ncentral::class,
 ],
 ```
 

@@ -1,15 +1,15 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Laravel;
+namespace Spinen\Ncentral\Laravel;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
-use Spinen\Nable\Ncentral\Client;
+use Spinen\Ncentral\NcentralClient;
 
 /**
  * Class NcentralProvider
  *
- * @package Spinen\Nable\Ncentral\Laravel
+ * @package Spinen\Ncentral\Laravel
  */
 class ServiceProvider extends LaravelServiceProvider
 {
@@ -37,22 +37,22 @@ class ServiceProvider extends LaravelServiceProvider
      */
     public function register()
     {
-        $this->registerClient();
+        $this->registerNcentralClient();
 
-        $this->app->alias(Client::class, 'ncentral');
+        $this->app->alias(NcentralClient::class, 'ncentral');
     }
 
     /**
-     * Register the client object
+     * Register the NcentralClient object
      *
-     * A Client needs to have some properties set, so in Laravel, we are going to pull them from the configs.
+     * A NcentralClient needs to have some properties set, so in Laravel, we are going to pull them from the configs.
      */
-    protected function registerClient()
+    protected function registerNcentralClient()
     {
         $this->app->singleton(
-            Client::class,
+            NcentralClient::class,
             function (Application $app) {
-                return new Client();
+                return new NcentralClient();
             }
         );
     }
@@ -65,7 +65,7 @@ class ServiceProvider extends LaravelServiceProvider
     public function provides()
     {
         return [
-            Client::class,
+            NcentralClient::class,
         ];
     }
 }

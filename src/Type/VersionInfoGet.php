@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\Nable\Ncentral\Type;
+namespace Spinen\Ncentral\Type;
 
 
 use Phpro\SoapClient\Type\RequestInterface;
@@ -9,14 +9,14 @@ class VersionInfoGet implements RequestInterface
 {
 
     /**
-     * @var \Spinen\Nable\Ncentral\Type\EiCredentials
+     * @var \Spinen\Ncentral\Type\EiCredentials
      */
     private $credentials;
 
     /**
      * Constructor
      *
-     * @var \Spinen\Nable\Ncentral\Type\EiCredentials $credentials
+     * @var \Spinen\Ncentral\Type\EiCredentials $credentials
      */
     public function __construct($credentials)
     {
@@ -24,7 +24,7 @@ class VersionInfoGet implements RequestInterface
     }
 
     /**
-     * @return \Spinen\Nable\Ncentral\Type\EiCredentials
+     * @return \Spinen\Ncentral\Type\EiCredentials
      */
     public function getCredentials()
     {
@@ -32,7 +32,7 @@ class VersionInfoGet implements RequestInterface
     }
 
     /**
-     * @param \Spinen\Nable\Ncentral\Type\EiCredentials $credentials
+     * @param \Spinen\Ncentral\Type\EiCredentials $credentials
      * @return VersionInfoGet
      */
     public function withCredentials($credentials)
